@@ -1,0 +1,96 @@
+﻿.OneButton
+{
+    background-color:black;
+    font-size:x-small;
+    color:lightgray;
+    height:30px;
+    width:100px;
+}
+
+.OneButton:hover
+{
+    background-color:darkred;
+}    
+
+.Text1
+{
+    color:darkgray;
+}
+
+.Message1
+{
+    font-size:medium;
+    font-style:italic
+}
+
+.OneButton1
+{
+    background-color:black;
+    font-size:x-small;
+    color:lightgray;
+    height:30px;
+    width:140px;
+}
+.OneButton1:hover
+{
+    background-color:darkred;
+}  
+
+.OneButton2
+{
+    background-color:black;
+    font-size:x-small;
+    color:white;
+    height:30px;
+    width:200px;
+}
+.OneButton2:hover
+{
+    background-color:darkred;
+}      
+
+
+.OneButton3
+{
+    background-color:black;
+    font-size:x-small;
+    color:white;
+    height:30px;
+    width:160px;
+}
+.OneButton3:hover
+{
+    background-color:darkred;
+}      
+
+.detail
+{
+    background-color:lightyellow;
+    color:navy;
+    padding: 6px;
+    text-align: left;
+    vertical-align:top;
+}
+
+.delete
+{
+    background-color:lightpink;
+    color:black;
+    padding: 6px;
+    text-align: left;
+    vertical-align:top;
+}
+
+.doc1 {
+    border: double;
+    border-width: 2px;
+    background-color:lightgray;
+    padding: 10px;
+    text-align: left;
+    vertical-align:central;
+}
+
+.dataHover {
+  background-color: #ECFFB3;
+}
+

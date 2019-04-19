@@ -1,0 +1,36 @@
+﻿@model Assignment_Di.Models.ImageGallery
+
+@{
+    ViewBag.Title = "CreateIndividual";
+}
+
+<h2>Create Individual Images</h2>
+
+@using (Html.BeginForm("CreateIndividual", "ImageGallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UserName, "User Name", htmlAttributes: new { })
+                    @Html.DisplayFor(model => model.UserName)
+                    @Html.HiddenFor(model => model.UserName, htmlAttributes: new { @class = "form-control"})
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Select File : </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.File, new { type = "file" })
+                @Html.ValidationMessage("CustomError")
+            </td>
+            <td>
+                <input type="submit" value="Upload" />
+            </td>
+        </tr>
+    </table>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

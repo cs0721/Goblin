@@ -1,0 +1,168 @@
+﻿@model Assignment_Di.Models.Actors
+@Scripts.Render("~/Scripts/js.js")
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/themes/base/all.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/themes/base/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/createTable1.css" rel="stylesheet" type="text/css" />
+
+<h2 style="font-weight:800">Add Actors</h2>
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <table class="create">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <tr>
+            <td width="100">
+                @Html.DisplayName("Name")
+            </td>
+            <td width="20"></td>
+            <td width="800">
+                @Html.TextBoxFor(model => model.ActorName, new { size = 50, title = "This is where you type in Actor name" })
+                @Html.ValidationMessageFor(model => model.ActorName, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="height"></tr>
+        <tr>
+            <td>
+                @Html.DisplayName("Date of Birth")
+            </td>
+            <td></td>
+            <td>
+                @Html.EditorFor(model => model.ActorDOB, new { htmlAttributes = new { @class = "form-control", title = "This is where you type in Actor DOB", accesskey = "d" } })
+                @Html.ValidationMessageFor(model => model.ActorDOB, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="height"></tr>
+        <tr>
+            <td>
+                @Html.DisplayName("Gender")
+            </td>
+            <td></td>
+            <td>
+                @{
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Male",
+                        Value = "Male"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Female",
+                        Value = "Female",
+                    });
+                }
+                @Html.DropDownListFor(model => model.ActorGender, listItems, "-- Select Gender --")
+                @Html.ValidationMessageFor(model => model.ActorGender, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="height"></tr>
+        <tr>
+            <td>
+                @Html.DisplayName("Nationality")
+            </td>
+            <td></td>
+            <td>
+                @Html.TextBoxFor(model => model.ActorNationality, new { size = 50, title = "This is where you type in Actor nationality" })
+                @Html.ValidationMessageFor(model => model.ActorNationality, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="height"></tr>
+        <tr>
+            <td>
+                @Html.DisplayName("Height")
+            </td>
+            <td></td>
+            <td>
+                @Html.TextBoxFor(model => model.ActorHeight, new { size = 20, title = "This is where you type in Actor height" })
+                @Html.ValidationMessageFor(model => model.ActorHeight, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="height"></tr>
+        <tr>
+            <td>
+                @Html.DisplayName("Weight")
+            </td>
+            <td></td>
+            <td>
+                @Html.TextBoxFor(model => model.ActorWeight, new { size = 20, title = "This is where you type in Actor weight" })
+                @Html.ValidationMessageFor(model => model.ActorWeight, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="height"></tr>
+        <tr>
+            <td>
+                @Html.DisplayName("Blood type")
+            </td>
+            <td></td>
+            <td>
+                @Html.DropDownListFor(model => model.ActorBloodType, new SelectListItem[]
+                             {
+                    new SelectListItem() {Text="A", Value="A"},
+                    new SelectListItem() {Text="B", Value="B"},
+                    new SelectListItem() {Text="O", Value="O"},
+                    new SelectListItem() {Text="AB", Value="AB"}
+                             }, "-- Select Blood Type --")
+                @Html.ValidationMessageFor(model => model.ActorBloodType, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="height"></tr>
+        <tr>
+            <td>
+                @Html.DisplayName("Star sign")
+            </td>
+            <td></td>
+            <td>
+                @Html.DropDownListFor(model => model.ActorStarSign, new SelectListItem[]
+                             {
+                    new SelectListItem() {Text="Aquarius", Value="Aquarius"},
+                    new SelectListItem() {Text="Pisces", Value="Pisces"},
+                    new SelectListItem() {Text="Aries", Value="Aries"},
+                    new SelectListItem() {Text="Taurus", Value="Taurus"},
+                    new SelectListItem() {Text="Gemini", Value="Gemini"},
+                    new SelectListItem() {Text="Cancer", Value="Cancer"},
+                    new SelectListItem() {Text="Leo", Value="Leo"},
+                    new SelectListItem() {Text="Virgo", Value="Virgo"},
+                    new SelectListItem() {Text="Libra", Value="Libra"},
+                    new SelectListItem() {Text="Scorpio", Value="Scorpio"},
+                    new SelectListItem() {Text="Sagittarius", Value="Sagittarius"},
+                    new SelectListItem() {Text="Capricorn", Value="Capricorn"}
+
+                             }, "-- Select Star Sign --")
+                @Html.ValidationMessageFor(model => model.ActorStarSign, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr class="height"></tr>
+        <tr>
+            <td>
+                @Html.DisplayName("Debut Year")
+            </td>
+            <td></td>
+            <td>
+                @Html.TextBoxFor(model => model.ActorDebutYear, new { size = 20, title = "This is where you type in Actor debut year" })
+                @Html.ValidationMessageFor(model => model.ActorDebutYear, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+    </table>
+    <br />
+    <p>
+        &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+        <input class="OneButton" type="submit" value="Create" />
+        <button class="OneButton" onclick="location.href='@Url.Action("Index", "Actors")';return false;">Back to List</button>
+    </p>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

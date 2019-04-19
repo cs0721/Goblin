@@ -1,0 +1,72 @@
+﻿@Scripts.Render("~/scripts/jsTable1.js")
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/newJQueryfunction.js"></script>
+<link href="~/Content/JQueryAdd.css" rel="stylesheet" />
+
+<br />
+<br />
+<style>
+    tr, th, td {
+        border: double;
+        border-width: 2px;
+    }
+</style>
+<div class="container">
+    <h1>Administration page</h1>
+    <br />
+    <br />
+    <table>
+        <tr>
+            <td width="300">
+                Send Email to fans
+            </td>
+            <td>
+                <button class="OneButton3" onclick="location.href='@Url.Action("AdminEmail", "AspNetUsers")';return false;">
+                    Send Email
+                </button> <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                See all users' images
+            </td>
+            <td>
+                <button class="OneButton3" onclick="location.href='@Url.Action("Gallery", "ImageGallery")';return false;">
+                    See Gallery
+                </button> <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Manage Actors
+            </td>
+            <td>
+                <button class="OneButton3" onclick="location.href='@Url.Action("Index", "Actors")';return false;">
+                    See Actors
+                </button> <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Manage Characters
+            </td>
+            <td>
+                <button class="OneButton3" onclick="location.href='@Url.Action("Index", "Characters")';return false;">
+                    See Characters
+                </button> <br />
+            </td>
+        </tr>
+    </table>
+</div>
+<br />
+<br />
+<div>
+    <h3>Google Drive</h3>
+    <p>Sharing data with users throughout using the Google Drive.</p>
+    <p><a id="shake" class="btn btn-default">Go Google Drive &raquo;</a></p>
+</div>

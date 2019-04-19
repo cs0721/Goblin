@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script src="~/Scripts/newJQueryfunction.js"></script>
+<link href="~/Content/MasterPage.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/JQueryAdd.css" rel="stylesheet" />
+
+<div class="jumbotron">
+    <h1>Goblin: The Lonely and Great God</h1>
+    <table id="homepage">
+        <tr>
+            <td width="235">
+                <h3 class="Text1" style="text-align:justify">
+                    A fabled "goblin" attempts to end his life by marrying a human priestess, but things get complicated
+                    when he starts to actually fall for her, and in turn, finds a new reason for wanting to stay alive.
+                </h3>
+                <button class="OneButton" onclick="location.href='@Url.Action("About", "Home")';
+                return false;">
+                    Learn more
+                </button> <br />
+                <h3>EN 100% | Korea | Romance</h3>
+            </td>
+            <td width="10"></td>
+            <td width="955">
+                <div class="container">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                            <li data-target="#myCarousel" data-slide-to="5"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="~/Content/image/goblin.jpeg" style="width:100%;">
+                            </div>
+
+                            <div class="item">
+                                <img src="~/Content/image/goblin4.JPG" style="width:100%;">
+                            </div>
+
+                            <div class="item">
+                                <img src="~/Content/image/goblin5.JPG" style="width:100%;">
+                            </div>
+
+                            <div class="item">
+                                <img src="~/Content/image/goblin6.JPG" style="width:100%;">
+                            </div>
+
+                            <div class="item">
+                                <img src="~/Content/image/goblin8.JPG" style="width:100%;">
+                            </div>
+
+                            <div class="item">
+                                <img src="~/Content/image/goblin9.JPG" style="width:100%;">
+                            </div>
+
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-md-3" align="center">
+        <h2>EPISODES</h2>
+        <p>Goblin 18 Episodes</p> <br />
+        <p><a id="submitButton" class="progress-button" href="#">See All</a></p>
+    </div>
+    <div class="col-md-3" align="center">
+        <h2>TRAILERS</h2>
+        <p>8 Clips</p> <br />
+        <p><a id="submitButton1" class="progress-button" href="#">See All</a></p>
+    </div>
+    <div class="col-md-3" align="center">
+        <h2>IMAGE</h2>
+        <p>Goblin Images</p> <br />
+        <p><a id="submitButton2" class="progress-button" href="#">See All</a></p>
+    </div>
+    <div class="col-md-3" align="center">
+        <h2>Official Website</h2>
+        <p>The official website of Goblin.</p> <br />
+        <p><a id="submitButton3" class="progress-button" href="#">See All</a></p>
+    </div>
+</div>

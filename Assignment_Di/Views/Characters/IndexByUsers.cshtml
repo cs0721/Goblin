@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Assignment_Di.Models.Characters>
+
+@Scripts.Render("~/scripts/js5.js")
+@Scripts.Render("~/scripts/jsTable3.js")
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/table.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+
+<h2 style="font-weight:800">Characters</h2>
+
+<br />
+<table id="data" class="table">
+    <thead>
+        <tr style="background-color:darkslategray">
+            <th style="color:white" width="150">
+                @Html.DisplayName("NAME")
+            </th>
+            <th style="color:white" width="150">
+                @Html.DisplayName("ACTOR")
+            </th>
+            <th style="color:white" width="700">
+                @Html.DisplayName("DESCRIPTION")
+            </th>
+            <th style="color:white" width="150">
+                @Html.DisplayName("GROUP")
+            </th>
+            <th style="color:white" width="50">
+                @Html.DisplayName("View")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="font-weight:600">
+                    @Html.DisplayFor(modelItem => item.CharacterName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Actors.ActorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CharacterDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CharacterGroup)
+                </td>
+                <td style="background-color:lightyellow">
+                    @Html.ActionLink("Details", "Details", new { id = item.CharacterID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

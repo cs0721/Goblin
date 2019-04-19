@@ -1,0 +1,60 @@
+﻿@model Assignment_Di.Models.Characters
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/createTable1.css" rel="stylesheet" type="text/css" />
+
+<h2 style="font-style:italic">@Html.DisplayFor(model => model.CharacterName)</h2>
+<br />
+
+<table class="detail">
+    <tr>
+        <th width="150">Character Description</th>
+        <td width="30"></td>
+        <td width="400">
+            @Html.DisplayFor(model => model.CharacterDescription)
+        </td>
+    </tr>
+    <tr class="height"></tr>
+    <tr>
+        <th>Character Group</th>
+        <td></td>
+        <td>
+            @Html.DisplayFor(model => model.CharacterGroup)
+        </td>
+    </tr>
+    <tr class="height"></tr>
+    <tr>
+        <th>Actor</th>
+        <td></td>
+        <td>
+            @Html.DisplayFor(model => model.Actors.ActorName)
+        </td>
+    </tr>
+</table>
+<br /> <br />
+
+<table class="button">
+    <tr>
+        <td>
+            <a href="@Url.Action("Edit","Characters",
+      new {id =Model.CharacterID})"><button class="OneButton">Edit</button></a>
+        </td>
+        <td width="20"></td>
+        <td class="OneButton">
+            <a href="@Url.Action("Delete","Characters",
+      new {id =Model.CharacterID})"><button class="OneButton">Delete</button></a>
+        </td>
+        <td width="20"></td>
+        <td class="OneButton">
+            <a href="@Url.Action("Index","Characters")">
+                <button class="OneButton">Back to List</button>
+            </a>
+        </td>
+    </tr>
+</table>
+

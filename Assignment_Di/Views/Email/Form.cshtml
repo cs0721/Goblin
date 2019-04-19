@@ -1,0 +1,30 @@
+﻿
+@*@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/Scripts/js.js")
+
+<br />
+<br />
+
+@if(ViewBag.Error != null)
+{
+    <h2>@ViewBag.Error</h2>
+}
+
+<div class="container">
+    <form method="post" action="Form">
+
+        <span class="form-control-static">Receiver Email: </span>
+        <input class="form-control" type="text" name="receiverEmail" />
+        <span class="form-control-static">Subject</span>
+        <input class="form-control" type="text" name="subject" />
+        <span class="form-control-static">Message</span>
+        <textarea class="form-control" name="message" cols="8" rows="6"></textarea>
+        <br />
+        <br />
+        <button class="OneButton" type="submit">Send Email</button>
+
+    </form>
+</div>*@

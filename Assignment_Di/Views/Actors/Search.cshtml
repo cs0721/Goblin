@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Assignment_Di.Models.Actors>
+@Scripts.Render("~/scripts/jsTable1.js")
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/table.css" rel="stylesheet" type="text/css" />
+
+<h2 style="font-weight:800">Search</h2>
+@using (Html.BeginForm("Search", "Actors", FormMethod.Get))
+{
+
+    <p style="font-size:small" align="right">
+        <br />
+        Actor Name: @Html.TextBox("ActorName")<br />
+        <input class="OneButton" align="right " type="submit" value="search" />
+    </p>
+
+}
+<table id="data" class="table">
+    <thead>
+        <tr style="background-color:darkslategray">
+            <th style="color:white" width="280">
+                @Html.DisplayName("NAME")
+            </th>
+            <th style="color:white" width="170">
+                @Html.DisplayName("DOB")
+            </th>
+            <th style="color:white" width="90">
+                @Html.DisplayName("GENDER")
+            </th>
+            <th style="color:white" width="100">
+                @Html.DisplayName("NATIONALITY")
+            </th>
+            <th style="color:white" width="90">
+                @Html.DisplayName("HEIGHT")
+            </th>
+            <th style="color:white" width="90">
+                @Html.DisplayName("WEIGHT")
+            </th>
+            <th style="color:white" width="90">
+                @Html.DisplayName("BLOOD TYPE")
+            </th>
+            <th style="color:white" width="100">
+                @Html.DisplayName("STAR SIGN")
+            </th>
+            <th style="color:white" width="100">
+                @Html.DisplayName("DEBUT YEAR")
+            </th>
+            <th style="color:white" width="90">
+                @Html.DisplayName("View")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="font-weight:600">
+                    @Html.DisplayFor(modelItem => item.ActorName)
+                </td>
+                <td>
+                    @item.ActorDOB.Date.ToShortDateString()
+                    @Html.DisplayFor(modelItem => item.ActorDOB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActorGender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActorNationality)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActorHeight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActorWeight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActorBloodType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActorStarSign)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActorDebutYear)
+                </td>
+                <td style="background-color:lightyellow">
+                    @Html.ActionLink("Details", "Details", new { id = item.ActorID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <button class="OneButton3" onclick="location.href='@Url.Action("Index", "Actors")';
+                return false;">
+        Back to Actors <
+    </button>
+</p>

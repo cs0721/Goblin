@@ -1,0 +1,74 @@
+﻿@model Assignment_Di.Models.AspNetUsers
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/createTable1.css" rel="stylesheet" type="text/css" />
+<br />
+<h2>Details</h2>
+<br />
+
+<table class="detail">
+    <tr>
+        <th width="150">User Name</th>
+        <td width="30"></td>
+        <td width="400">
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+        </td>
+    </tr>
+    <tr class="height"></tr>
+    <tr>
+        <th>User Email</th>
+        <td></td>
+        <td>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+        </td>
+    </tr>
+</table>
+<br /> <br />
+<table class="button">
+    <tr>
+        <td>
+            <a href="@Url.Action("Edit","AspNetUsers",
+      new {id =Model.Id})"><button class="OneButton">Edit</button></a>
+        </td>
+        <td width="20"></td>
+        <td class="OneButton">
+            <a href="@Url.Action("Delete","AspNetUsers",
+      new {id =Model.Id})"><button class="OneButton">Delete</button></a>
+        </td>
+        <td width="20"></td>
+        <td class="OneButton">
+            <a href="@Url.Action("Index","AspNetUsers")">
+                <button class="OneButton">Back to List</button>
+            </a>
+        </td>
+    </tr>
+</table>
+
+@*<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+</div>*@
+

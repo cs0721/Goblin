@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Assignment_Di.Models.AspNetUsers>
+
+@Scripts.Render("~/scripts/js5.js")
+@Scripts.Render("~/scripts/jsTable3.js")
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/table.css" rel="stylesheet" type="text/css" />
+<br />
+<h2>User List</h2>
+<br />
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table id="data" class="table">
+    <thead>
+        <tr style="background-color:darkslategray">
+            <th style="color:white">
+                @Html.DisplayName("User Name")
+            </th>
+            <th style="color:white">
+                @Html.DisplayName("Email Address")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>                   
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

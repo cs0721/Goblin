@@ -1,0 +1,61 @@
+﻿@model Assignment_Di.Models.EmailFormModel
+@{
+    ViewBag.Title = "AdminEmail2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/createTable1.css" rel="stylesheet" type="text/css" />
+
+<br />
+<h2>Send Email to User</h2>
+<br />
+@using (Html.BeginForm("AdminEmail2", "AspNetUsers", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <hr />
+    <table class="create">
+        <tr>
+            <td width="100">
+                @Html.DisplayName("Subject")
+            </td>
+            <td width="20"></td>
+            <td width="800">
+                @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Subject)
+            </td>
+        </tr>
+        <tr class="height"></tr>
+        <tr>
+            <td width="100">
+                @Html.DisplayName("Message")
+            </td>
+            <td width="20"></td>
+            <td width="800">
+                @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Message)
+            </td>
+        </tr>
+        <tr class="height"></tr>
+        <tr>
+            <td width="100">
+                @Html.DisplayName("Upload")
+            </td>
+            <td width="20"></td>
+            <td width="800">
+                <input type="file" name="upload" />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="OneButton" value="Send" />
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

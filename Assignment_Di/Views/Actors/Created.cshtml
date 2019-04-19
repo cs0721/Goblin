@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+
+<h2>An actor has been created successfully.</h2> <br />
+<p>
+    <button class="OneButton3" onclick="location.href='@Url.Action("Index", "Actors")';
+                return false;">
+        Back to Actors
+    </button>
+</p>

@@ -1,0 +1,86 @@
+﻿@model Assignment_Di.Models.Actors
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/s1.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/createTable1.css" rel="stylesheet" type="text/css" />
+
+<h2 style="font-style:italic">@Html.DisplayFor(model => model.ActorName)</h2> <br />
+
+<table class="detail">
+    <tr>
+        <th width="150">Date of Birth</th>
+        <td width="30"></td>
+        <td class="view" width="400">
+            @Html.DisplayFor(model => model.ActorDOB)
+        </td>
+    </tr>
+    <tr class="height"></tr>
+    <tr>
+        <th>Gender</th>
+        <td></td>
+        <td>
+            @Html.DisplayFor(model => model.ActorGender)
+        </td>
+    </tr>
+    <tr class="height"></tr>
+    <tr>
+        <th>Nationality</th>
+        <td></td>
+        <td>
+            @Html.DisplayFor(model => model.ActorNationality)
+        </td>
+    </tr>
+    <tr class="height"></tr>
+    <tr>
+        <th>Height</th>
+        <td></td>
+        <td>
+            @Html.DisplayFor(model => model.ActorHeight)
+        </td>
+    </tr>
+    <tr class="height"></tr>
+    <tr>
+        <th>Weight</th>
+        <td></td>
+        <td>
+            @Html.DisplayFor(model => model.ActorWeight)
+        </td>
+    </tr>
+    <tr class="height"></tr>
+    <tr>
+        <th>Blood Type</th>
+        <td></td>
+        <td>
+            @Html.DisplayFor(model => model.ActorBloodType)
+        </td>
+    </tr>
+    <tr class="height"></tr>
+    <tr>
+        <th>Star Sign</th>
+        <td></td>
+        <td>
+            @Html.DisplayFor(model => model.ActorStarSign)
+        </td>
+    </tr>
+    <tr class="height"></tr>
+    <tr>
+        <th>Debut Year</th>
+        <td></td>
+        <td>
+            @Html.DisplayFor(model => model.ActorDebutYear)
+        </td>
+    </tr>
+</table>
+<br />
+
+<p class="OneButton">
+    <a href="@Url.Action("Index","Actors")">
+        <button class="OneButton">Back to List</button>
+    </a>
+</p>
+
+        
